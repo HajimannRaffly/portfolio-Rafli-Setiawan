@@ -584,6 +584,51 @@ footer{
     }
 
 }
+/* MUSIC PLAYER */
+
+.music-box{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    z-index:200;
+
+}
+
+
+#musicBtn{
+
+    background:#00adb5;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+    transition:0.3s;
+
+}
+
+
+#musicBtn:hover{
+
+    background:#111;
+
+    transform:translateY(-5px);
+
+}
 
 </style>
 
@@ -865,48 +910,30 @@ Silahkan hubungi saya melalui sosial media:
 
 
 <!-- INSTAGRAM -->
+    <a href="https://instagram.com/jiwww.0608" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
 
-<a href="https://instagram.com/raplyww.4p" target="_blank">
+    <!-- GITHUB -->
+    <a href="https://github.com/HajimannRaffly" target="_blank">
+        <i class="fa-brands fa-github"></i>
+    </a>
 
-<i class="fa-brands fa-instagram"></i>
+    <!-- TIKTOK -->
+    <a href="https://www.tiktok.com/@usernamekamu" target="_blank">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
 
-</a>
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/6285793690647" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
+    <!-- EMAIL -->
+    <a href="mailto:setiawanrafli055@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
 
-
-
-
-<!-- TIKTOK -->
-
-<a href="https://www.tiktok.com/@usernamekamu" target="_blank">
-
-<i class="fa-brands fa-tiktok"></i>
-
-</a>
-
-
-
-
-
-<!-- WHATSAPP -->
-
-<a href="https://wa.me/6285793690647" target="_blank">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-
-
-
-
-<!-- EMAIL -->
-
-<a href="mailto:setiawanrafli055@gmail.com">
-
-<i class="fa-solid fa-envelope"></i>
-
-</a>
 
 
 
@@ -1000,10 +1027,54 @@ window.addEventListener("scroll",()=>{
 
 });
 
+// MUSIC PLAYER
 
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+let sedangPutar = false;
+
+
+musicBtn.onclick = function(){
+
+
+    if(sedangPutar){
+
+        music.pause();
+
+        musicBtn.innerHTML = "🎵 Putar Musik";
+
+        sedangPutar = false;
+
+
+    }else{
+
+
+        music.play();
+
+        musicBtn.innerHTML = "⏸ Pause Musik";
+
+        sedangPutar = true;
+
+
+    }
+
+};
 
 </script>
+<!-- MUSIC PLAYER -->
 
+<div class="music-box">
+
+    <button id="musicBtn">
+        🎵 Putar Musik
+    </button>
+
+    <audio id="bgMusic" loop>
+        <source src="wonderwall.mp3" type="audio/mpeg">
+    </audio>
+
+</div>
 
 </body>
 
